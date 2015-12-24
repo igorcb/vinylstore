@@ -1,0 +1,35 @@
+<%= form_for @disc, url: discs_path, html: { multipart: true } do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :year %><br>
+    <%= f.select :year, options_for_select( (1950..Date.today.year).to_a, Date.today.year), {include_blank: true}, {class: "form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :price %><br>
+    <%= f.text_field :price, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :state %><br>
+    <%= f.select( :state, select_state, {include_blank: "Select State"}, {class: "form-control"} ) %>      
+  </div>
+
+  <div class="form-group">
+    <%= f.file_field :avatar, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: "form-control", rows: 6 %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Save", class: "btn btn-primary" %>
+    <%= link_to "View",  disc_path(@disc), class: "btn btn-info" if !@disc.new_record? %>
+    <%= link_to "List All", discs_path, class: "btn btn-default" %>
+  </div>
+<% end %>
+

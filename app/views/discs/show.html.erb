@@ -1,0 +1,34 @@
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @disc.name %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @disc.year %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @disc.price %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @disc.state_name %>
+</p>
+
+<%= image_tag @disc.avatar.url(:thumb) %>
+
+<p>
+  <strong>Description:</strong>
+  <%= @disc.description %>
+</p>
+
+<div class="form-group">
+  <%= link_to 'Edit', edit_disc_path(@disc), class: "btn btn-primary" %>
+  <%= link_to 'List All', discs_path, class: "btn btn-default" %>
+  <%= link_to 'Buy', buy_disc_path(@disc), class: "btn btn-success" %>
+</div>

@@ -1,0 +1,17 @@
+      <table class="table table-striped">
+        <thead>
+          <tr>
+          <th></th>
+         </tr>
+        </thead>
+
+        <tbody>
+          <% Disc.all.each do |disc| %>
+            <tr>
+              <td><%= link_to image_tag(disc.avatar.url(:thumb)), disc %></td>
+
+
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
