@@ -33,6 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap-sass'
+gem 'bootstrap-addons-rails'
 gem 'paperclip', '~> 4.2.1'
 
 group :development, :test do
