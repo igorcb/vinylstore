@@ -1,6 +1,6 @@
 class DiscsController < ApplicationController
-  http_basic_authenticate_with name: "loja", password: "vinil", except: [:show, :index] 
-  before_action :set_disc, only: [:show, :edit, :update, :destroy, :buy]
+  #http_basic_authenticate_with name: "loja", password: "vinil", except: [:show, :index, :buy] 
+  before_action :set_disc, only: [:show, :edit, :update, :destroy, :buy, :info_email]
 
   # GET /discs
   # GET /discs.json
@@ -64,10 +64,16 @@ class DiscsController < ApplicationController
 
   def buy
     respond_to do |format|
-      #DiscMailer.buy_email(@disc).deliver_later
-      DiscMailer.buy_email(@disc).deliver_now
+      DiscMailer.buy_email(@disc, params[:informar][:email]).deliver_now
       format.html { redirect_to @disc, notice: 'Disc successfully purchased.' }
     end
+  end
+
+  def info_email
+    respond_to do |format|
+      format.html
+      format.js
+    end    
   end
 
   private
