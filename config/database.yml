@@ -3,8 +3,8 @@ development:
   database: vinyl_dev
   pool: 5
   timeout: 5000
-  username: my_user
-  password: my_password
+  username: i4
+  password: q2w3e4
   host: localhost
   encoding: UTF8    
 test:
@@ -12,8 +12,8 @@ test:
   database: vinyl_test
   pool: 5
   timeout: 5000
-  username: my_user
-  password: my_password
+  username: i4
+  password: q2w3e4
   host: localhost
   encoding: UTF8    
 
@@ -22,8 +22,8 @@ production:
   database: vinyl
   pool: 5
   timeout: 5000
-  username: my_user
-  password: my_password
+  username: i4
+  password: q2w3e4
   host: localhost
   encoding: UTF8    
 

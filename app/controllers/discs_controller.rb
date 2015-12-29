@@ -11,6 +11,10 @@ class DiscsController < ApplicationController
   # GET /discs/1
   # GET /discs/1.json
   def show
+    @hash = Gmaps4rails.build_markers(@disc) do |disc, marker|
+      marker.lat disc.latitude
+      marker.lng disc.longitude
+    end  
   end
 
   # GET /discs/new
@@ -84,6 +88,6 @@ class DiscsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def disc_params
-      params.require(:disc).permit(:name, :year, :price, :state, :avatar, :description)
+      params.require(:disc).permit(:name, :year, :price, :state, :avatar, :description, :address, :latidude, :longitude)
     end
 end

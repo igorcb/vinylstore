@@ -36,6 +36,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'bootstrap-addons-rails'
 gem 'paperclip', '~> 4.2.1'
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'underscore-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
