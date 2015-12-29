@@ -12,6 +12,7 @@ RSpec.describe Disc, type: :model do
   it { should respond_to(:price) }
   it { should respond_to(:state) }
   it { should respond_to(:description) }
+  it { should respond_to(:comments) }
 
   describe "when name is not present" do
     before { @disc.name = '' }

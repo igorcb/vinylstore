@@ -11,6 +11,7 @@ class DiscsController < ApplicationController
   # GET /discs/1
   # GET /discs/1.json
   def show
+    @comment = @disc.comments.build
     @hash = Gmaps4rails.build_markers(@disc) do |disc, marker|
       marker.lat disc.latitude
       marker.lng disc.longitude

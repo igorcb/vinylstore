@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   get 'static_pages/home'
   match "/info_email" => "discs/info_email", :controller => 'discs', :action => 'info_email', via: [:get, :post]
 
